@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Disease Diagnosis</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/default.css" rel="stylesheet">
+
+    <script>
+        function validate() {
+            var x = document.forms["f1"]["t1"].value;
+            if (x == null || x == "") {
+                alert("Disease name must be chosen");
+                document.f1.t1.focus();
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+        <header id="header">
+            <div id="logo">
+                <h1 style="color: orange; font-size: 24px;">Disease Diagnosis using Chatbot</h1>
+                <marquee style="color: pink; font-size: 20px;">Disease Diagnosis</marquee>
+            </div>
+        </header>
+
+        <nav id="menu">
+            <ul>
+                <li><a href="chatbot.html">Chatbot</a></li>
+                <li><a href="book-appointment.html">Book Appointment</a></li>
+                <li><a href="disease-info.html">Lifestyle & Disease Information</a></li>
+                <li><a href="logout.html">Logout</a></li>
+            </ul>
+        </nav>
+
+        <div class="entry">
+            <br><br><br>
+            <div style="text-align: center; color: white;">
+                <!-- Placeholder for any message -->
+                [Disease info data goes here]
+            </div>
+
+            <br>
+            <center><p style="font-size: 18px; color: white;">Lifestyle, Diets & Disease Information Screen</p></center>
+
+            <form name="f1" method="post" action="diseaseinfo.html" onsubmit="return validate()">
+                <br><br>
+                <table align="center" width="35%" class="notepad">
+                    <tr>
+                        <th align="left" style="color: white;">Choose Disease</th>
+                        <td>&nbsp;&nbsp;
+                            <select name="t1">
+                                <option value="">-- Select a disease --</option>
+                                <option value="Diabetes">Diabetes</option>
+                                <option value="Hypertension">Hypertension</option>
+                                <option value="Tuberculosis">Tuberculosis</option>
+                                <option value="Typhoid">Typhoid</option>
+                                <option value="Pneumonia">Pneumonia</option>
+                                <option value="Malaria">Malaria</option>
+                                <!-- Add more diseases as needed -->
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="submit" value="Submit">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

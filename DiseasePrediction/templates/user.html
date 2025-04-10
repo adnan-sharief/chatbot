@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Disease Diagnosis</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/default.css" rel="stylesheet">
+
+    <script>
+        function validate() {
+            var x = document.forms["f1"]["username"].value;
+            var y = document.forms["f1"]["password"].value;
+
+            if (x == null || x == "") {
+                window.alert("Email ID must be entered");
+                document.f1.username.focus();
+                return false;
+            }
+
+            var filter = /^([a-zA-Z0-9_\.\-])+\@(gmail+\.)+(com)+$/;
+            if (!filter.test(x)) {
+                window.alert('Enter a valid email address');
+                document.f1.username.focus();
+                return false;
+            }
+
+            if (y == null || y == "") {
+                window.alert("Password must be entered");
+                document.f1.password.focus();
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+        <header id="header">
+            <div id="logo">
+                <h1 style="color: orange; font-size: 24px;">Disease Diagnosis using Chatbot</h1>
+                <marquee style="color: pink; font-size: 20px;">Disease Diagnosis</marquee>
+            </div>
+        </header>
+
+        <nav id="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="user.html">User</a></li>
+                <li><a href="register.html">Register Here</a></li>
+            </ul>
+        </nav>
+
+        <div class="entry">
+            <br><br><br>
+            <div style="color: white; text-align: center;">
+                <!-- Replace this with your own data or message -->
+                [ Dynamic data goes here ]
+            </div>
+
+            <br>
+            <center><p style="font-size: 18px; color: white;">User Login Screen</p></center>
+
+            <form name="f1" method="post" action="user-login.html" onsubmit="return validate()">
+                <br><br>
+                <table align="center" width="35%" class="notepad">
+                    <tr>
+                        <th align="left" style="color: white;">Email ID</th>
+                        <td>&nbsp;&nbsp;<input type="text" name="username" size="25" value="" class="form-control"></td>
+                    </tr>
+
+                    <tr>
+                        <th align="left" style="color: white;">Password</th>
+                        <td>&nbsp;&nbsp;<input type="password" name="password" value="" class="form-control"></td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="submit" value="Login">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

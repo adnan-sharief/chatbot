@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Disease Diagnosis</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/default.css" rel="stylesheet">
+    <script src="../static/datetimepicker.js"></script>
+    <script>
+        function validate() {
+            var x = document.forms["f1"]["t2"].value;
+            if (x == null || x == "") {
+                alert("Appointment Date must be chosen");
+                document.f1.t2.focus();
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+        <header id="header">
+            <div id="logo">
+                <h1 style="color: orange; font-size: 24px;">Disease Diagnosis using Chatbot</h1>
+                <marquee style="color: pink; font-size: 20px;">Disease Diagnosis</marquee>
+            </div>
+        </header>
+
+        <nav id="menu">
+            <ul>
+                <li><a href="index.html">Chatbot</a></li>
+                <li><a href="bookappointment.html">Book Appointment</a></li>
+                <li><a href="diseaseinfo.html">Lifestyle & Disease Information</a></li>
+                <li><a href="user.html">Logout</a></li>
+            </ul>
+        </nav>
+
+        <div class="entry">
+            <br><br><br>
+            <div style="text-align: center; color: white;">
+                <!-- Optional: Inject any dynamic message here -->
+                [Appointment info goes here]
+            </div>
+
+            <br>
+            <center><p style="font-size: 18px; color: white;">Book Appointment Screen</p></center>
+
+            <form name="f1" method="post" action="appointment-submit.html" onsubmit="return validate()">
+                <br><br>
+                <table align="center" width="35%" class="notepad">
+                    <tr>
+                        <th align="left" style="color: white;">Choose Doctor</th>
+                        <td>&nbsp;&nbsp;
+                            <select name="t1" class="form-control">
+                                <option value="Dr. Ameet Dravid-Aids">Dr. Ameet Dravid-Aids</option>
+                                <option value="Dr. Pankaj Kumar-Typhoid">Dr. Pankaj Kumar-Typhoid</option>
+                                <option value="Dr. Vijay Arora-Tuberculosis">Dr. Vijay Arora-Tuberculosis</option>
+                                <option value="Dr. Prof Jayalakshmi T K-Pneumonia">Dr. Prof Jayalakshmi T K-Pneumonia</option>
+                                <option value="Dr. Chavan-Paralysis">Dr. Chavan-Paralysis</option>
+                                <option value="Dr. Suresh Joshi-General Medicine">Dr. Suresh Joshi-General Medicine</option>
+                                <option value="Dr. Deepa Reddy B.V-Migrane">Dr. Deepa Reddy B.V-Migrane</option>
+                                <option value="Dr Abdul Ghafur-Malaria">Dr Abdul Ghafur-Malaria</option>
+                                <option value="Dr Aditya Shah-Jaundice">Dr Aditya Shah-Jaundice</option>
+                                <option value="Dr. Vijay Surase-Hypertension">Dr. Vijay Surase-Hypertension</option>
+                                <option value="Dr. Harit Chaturvedi-Hepatitis">Dr. Harit Chaturvedi-Hepatitis</option>
+                                <option value="Dr Moka Praneeth-Gerd">Dr Moka Praneeth-Gerd</option>
+                                <option value="Dr. Amit Maydeo-Gastro">Dr. Amit Maydeo-Gastro</option>
+                                <option value="Dr. Rohit Batra-FungalInfection">Dr. Rohit Batra-FungalInfection</option>
+                                <option value="Dr. Sandeep Budhiraja-DrugReaction">Dr. Sandeep Budhiraja-DrugReaction</option>
+                                <option value="Dr. Chythanya D C-Diabetes">Dr. Chythanya D C-Diabetes</option>
+                                <option value="Dr. Sandeep Budhiraja-Dengue">Dr. Sandeep Budhiraja-Dengue</option>
+                                <option value="Dr. P Naveen Kumar-Cold">Dr. P Naveen Kumar-Cold</option>
+                                <option value="Dr. Sunil Dhar-ChronicDisease">Dr. Sunil Dhar-ChronicDisease</option>
+                                <option value="Dr. Abhigyan Kumar-ChickenPox">Dr. Abhigyan Kumar-ChickenPox</option>
+                                <option value="Dr. S.K.S. Marya-Spondylosis">Dr. S.K.S. Marya-Spondylosis</option>
+                                <option value="Dr. Vivek Nangia-Asthma">Dr. Vivek Nangia-Asthma</option>
+                                <option value="Dr. Basheer Ahmed-Allergy">Dr. Basheer Ahmed-Allergy</option>
+                                <option value="Dr. Harit Chaturvedi-AlcoholicHepatitis">Dr. Harit Chaturvedi-AlcoholicHepatitis</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th style="color: white;">Choose Appointment Date</th>
+                        <td>
+                            &nbsp;<input name="t2" type="text" id="demo" maxlength="25" size="20" class="c2">
+                            <a href="javascript:NewCal('demo','ddmmyyyy',false,24)">
+                                <img src="../static/cal.gif" width="16" height="16" alt="Pick a date" style="vertical-align: middle;">
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" value="Submit"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

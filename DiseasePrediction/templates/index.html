@@ -1,57 +1,67 @@
-{% load static %}
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Disease Diagnosis</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link href="{% static 'default.css' %}" rel="stylesheet" type="text/css" media="screen" />
+    <meta charset="UTF-8">
+    <title>Disease Diagnosis</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/default.css" rel="stylesheet">
 </head>
 <body>
-<div id="wrapper">
-  <div id="header">
-    <div id="logo">
-      <h1><font color="orange" size="5">Disease Diagnosis using Chatbot</font></h1>
-	  <marquee><font color="pink" size="4">Disease Diagnosis</font></marquee>
-    </div>
-   
-  
-    </div>
-  </div>
-  <div id="menu">
-    <ul>
-      <li><a href="{% url 'index' %}">Home</a></li>
-      <li><a href="{% url 'User' %}">User</a></li>
-      <li><a href="{% url 'Register' %}">Register Here</a></li>
-  </ul>
-  </div>
-  <div id="page">
-   <div id="content">
-      <div class="post">
-        <div class="title">
-          <h2>Disease Diagnosis</h2>
-         </div>
-        <div class="entry">
-		 <br/><br/><br/>
+    <div id="wrapper">
+        <header id="header">
+            <div id="logo">
+                <h1 style="color: orange; font-size: 24px;">Disease Diagnosis using Chatbot</h1>
+                <marquee style="color: pink; font-size: 20px;">Disease Diagnosis</marquee>
+            </div>
+        </header>
 
-	 
-	 <br>
-          <p><img src="{% static 'images/images.jpg' %}" alt="" width="890" height="200" class="left" /><p></p><font size="4" color="white">
-          <center><br/>About Disease Diagnosis</center></font></p>
+        <nav id="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="user.html">User</a></li>
+                <li><a href="register.html">Register Here</a></li>
+            </ul>
+        </nav>
 
-		  <table border="1" align="center">
-		  <tr><th><font size="" color="white">Algorithm</th><th><font size="" color="white">Accuracy</th><th><font size="" color="white">Precision</th>
-		  <th><font size="" color="white">Recall</th><th><font size="" color="white">FScore</th></tr>
-		  {{ data|safe }}
-		  </table><br/><br/>
-          <p><font size="" color="white">Disease Diagnosis using Chatbot & Machine Learning Algorithms.</p>
-          </div>
-        
-      </div>
-     
-       
-       
+        <main id="page">
+            <section id="content">
+                <article class="post">
+                    <header class="title">
+                        <h2>Disease Diagnosis</h2>
+                    </header>
+                    <div class="entry">
+                        <img src="../static/images/images.jpg" alt="Disease Diagnosis" width="890" height="200" class="left" />
+                        <h3 style="text-align: center; color: white; font-size: 18px;">About Disease Diagnosis</h3>
+                        
+                        <table border="1" align="center">
+                            <thead>
+                                <tr>
+                                    <th style="color: white;">Algorithm</th>
+                                    <th style="color: white;">Accuracy</th>
+                                    <th style="color: white;">Precision</th>
+                                    <th style="color: white;">Recall</th>
+                                    <th style="color: white;">FScore</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Data rows go here -->
+                                <tr>
+                                    <td style="color: white;">Random Forest</td>
+                                    <td style="color: white;">95%</td>
+                                    <td style="color: white;">0.92</td>
+                                    <td style="color: white;">0.94</td>
+                                    <td style="color: white;">0.93</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <p style="color: white; font-size: 16px; margin-top: 20px;">
+                            Disease Diagnosis using Chatbot & Machine Learning Algorithms.
+                        </p>
+                    </div>
+                </article>
+            </section>
+        </main>
     </div>
-    
-  </div>
-
 </body>
 </html>
